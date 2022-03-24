@@ -1,0 +1,54 @@
+﻿<Window x:Class="SitnikovaPreliminaryDesign.OperatorMainMenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:SitnikovaPreliminaryDesign"
+        mc:Ignorable="d"
+        Title="Главное меню оператора" WindowStartupLocation="CenterScreen" WindowState="Maximized" Height="720" Width="1280">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="500" />
+            <Setter Property="Height" Value="100" />
+            <Setter Property="FontSize" Value="32" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Button x:Name="btnBack" Style="{StaticResource BackButton}" Click="btnBack_Click"/>
+        
+        <Button Name="btnSubscriptionManager"  Content="Управление абонементами"
+                Grid.Column="0"
+                Grid.Row="0" 
+                VerticalAlignment="Bottom" Click="btnSubscriptionManager_Click"/>
+        
+        <Button x:Name="btnOrgManager" Content="Управление организациями"
+                Grid.Column="1"
+                Grid.Row="0" 
+                VerticalAlignment="Bottom" Click="btnOrgManager_Click"/>
+        
+        <Button Name="btnStationManager" Content="Управление станциями"
+                Grid.Column="0"
+                Grid.Row="1" Click="btnStationManager_Click" />
+        
+        <Button Name="btnAllPayments" Content="Все оплаты"
+                Grid.Column="1"
+                Grid.Row="1" Click="btnAllPayments_Click" />
+        
+        <Button x:Name="btnDoPay" Content="Произвести абонентскую плату"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Grid.Row="2" 
+                VerticalAlignment="Top" Click="btnDoPay_Click"/>
+    </Grid>
+</Window>

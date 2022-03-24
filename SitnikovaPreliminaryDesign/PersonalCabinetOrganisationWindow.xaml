@@ -1,0 +1,158 @@
+﻿<Window x:Class="SitnikovaPreliminaryDesign.PersonalCabinetOrganisationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:SitnikovaPreliminaryDesign"
+        mc:Ignorable="d"
+        Title="Личный кабинет" Height="720" Width="1280" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="FontSize" Value="26" />
+            <Setter Property="Margin" Value="10 0" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Margin" Value="3" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="190" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Margin" Value="4" />
+            <Setter Property="FontSize" Value="28" />
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Width" Value="180" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Margin" Value="6" />
+            <Setter Property="FontSize" Value="24" />
+        </Style>
+        <Style TargetType="Viewbox">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Height" Value="50" />
+        </Style>
+        <Style TargetType="RadioButton">
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="Margin" Value="4" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.4*" />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="btnBack" Style="{StaticResource BackButton}" Click="btnBack_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Height="39" />
+
+        <TextBlock Text="Наименование:"
+                   Grid.Column="1"
+                   Grid.Row="0" />
+
+        <TextBlock Text="Номер телефона:"
+                   Grid.Column="2"
+                   Grid.Row="0" />
+
+        <TextBlock Text="Лицевой счёт:"
+                   Grid.Column="3"
+                   Grid.Row="0" />
+
+        <TextBlock Text="Пароль:"
+                   Grid.Column="4"
+                   Grid.Row="0" 
+                   Margin="20 0"/>
+
+        <TextBox Name="tbName"
+                 Grid.Column="1"
+                 Grid.Row="1" MaxLength="50"/>
+
+        <TextBox Name="tbPhoneNumber"
+                 Grid.Column="2"
+                 Grid.Row="1" IsEnabled="False" FontSize="23"/>
+
+        <TextBox Name="tbPersonalAccount"
+                 Grid.Column="3"
+                 Grid.Row="1" IsEnabled="False"/>
+
+        <PasswordBox Name="pbPassword"
+                     Grid.Column="4"
+                     Grid.Row="1"
+                     Height="50"
+                     FontSize="24"
+                     Width="250" MaxLength="20"/>
+
+        <TextBlock Text="Адрес:"
+                   Grid.Column="1"
+                   Grid.Row="2" />
+
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="3" Orientation="Horizontal">
+            <TextBox Name="tbIndex"
+                     Width="190" MaxLength="6" PreviewTextInput="tbIndex_PreviewTextInput"/>
+
+            <TextBox Name="tbCity"
+                     Width="220" MaxLength="50"/>
+
+            <TextBox Name="tbStreet"
+                     Width="250" MaxLength="50"/>
+
+            <TextBox Name="tbHouse"
+                     Width="140" MaxLength="4" PreviewTextInput="tbIndex_PreviewTextInput"/>
+        </StackPanel>
+
+        <ComboBox Name="cbStations"
+                  Grid.Column="4"
+                  Grid.Row="3" 
+                  Width="250" Margin="14,0,14,3"/>
+
+        <ComboBox Name="cbUserStatuses"
+                  Grid.Column="1"
+                  Grid.Row="4"
+                  Width="250"
+                  HorizontalAlignment="Left" Margin="6,0,0,3" IsEnabled="False"/>
+
+        <Button x:Name="btnStatus" Content="Включить"
+                Grid.Column="2"
+                Grid.Row="4"
+                HorizontalAlignment="Left" Margin="4,0,0,0" Click="btnStatus_Click" />
+
+        <TextBlock Text="Сумма пополнения:"
+                   Grid.Column="1"
+                   Grid.Row="5" />
+
+        <TextBox Name="tbPaySum"
+                 Grid.Column="1"
+                 Grid.Row="6" MaxLength="13" PreviewTextInput="tbPaySum_PreviewTextInput"/>
+
+        <Button x:Name="btnPay" Content="Пополнить счёт"
+                Grid.Column="2"
+                Grid.Row="6"
+                Width="250" Margin="14,0,14,5" Click="btnPay_Click" />
+
+        <Button x:Name="btnSave" Content="Сохранить"
+                Grid.Column="4"
+                Grid.Row="9"
+                HorizontalAlignment="Left" Margin="10,0,0,0" Click="btnSave_Click" />
+
+    </Grid>
+</Window>
